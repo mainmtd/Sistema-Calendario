@@ -1,0 +1,108 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gi="clr-namespace:NL.GI.ComponentesWPF.Cliente">
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Merge nos componentes do telerik, onde alguns componentes GI são baseados -->
+        <!--NÃO TIRAR DA ORDEM 
+                System.Windows; Controls; Controls.Input; Controls.GridView; Controls.Data; Controls.Navigation -->
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/System.Windows.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.Input.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.GridView.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.Data.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.Navigation.xaml" />      
+        
+        
+        <!-- Merge nos componentes GI -->
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIFiltroPadrao.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoComum.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIRadioButton.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIComboBox.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIListBox.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GILabelConteudo.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GILabelSubtitulo.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GILabelTexto.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GILabelTitulo.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputCheckBox.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputText.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputNumerosAcimaAbaixo.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputNumerosDecimais.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputNumerosInteiros.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputNumerosMoeda.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputNumerosPercentual.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIGrid.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GICalendario.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GICalendarioTime.xaml"/>
+        <!--<ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GISearchTextBox.xaml"/>-->
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GISearchText.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIComboTree.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIClassificacao.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoAcao.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIGridToolbarCadastro.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIToolbar.xaml"/>
+        <!--<ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GISeparator.xaml"/>-->
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIInputWrappedText.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIModuleItemsButton.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoDropDownExportar.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIToolbarCadastro.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoWizard.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoDropDown.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoDropDownOutros.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBotaoDropDownLocalizar.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIComboTreeGeneric.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GISpreadsheet.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIWindow.xaml"/>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GITreePayRec.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Faz com que o estilo seja aplicado automaticamente ao chamar o componente -->
+    <Style TargetType="{x:Type gi:GIFiltroPadrao}" BasedOn="{StaticResource GIFiltroPadraoStyle}"/>
+    <Style TargetType="{x:Type gi:GIBotaoComum}" BasedOn="{StaticResource GIBotaoComumStyle}" />
+    <Style TargetType="{x:Type gi:GIRadioButton}" BasedOn="{StaticResource GIRadioButtonStyle}" />
+    <Style TargetType="{x:Type gi:GIComboBox}" BasedOn="{StaticResource GIComboBoxStyle}" />
+    <Style TargetType="{x:Type gi:GIListBox}" BasedOn="{StaticResource GIListBoxStyle}" />
+    <Style TargetType="{x:Type gi:GILabelConteudo}" BasedOn="{StaticResource GILabelConteudoStyle}" />
+    <Style TargetType="{x:Type gi:GILabelSubtitulo}" BasedOn="{StaticResource GILabelSubtituloStyle}" />
+    <Style TargetType="{x:Type gi:GILabelTexto}" BasedOn="{StaticResource GILabelTextoStyle}" />
+    <Style TargetType="{x:Type gi:GILabelTitulo}" BasedOn="{StaticResource GILabelTituloStyle}" />
+    <Style TargetType="{x:Type gi:GIInputCheckbox}" BasedOn="{StaticResource GIInputCheckBoxStyle}" />
+    <Style TargetType="{x:Type gi:GIInputText}" BasedOn="{StaticResource GIInputTextStyle}" />
+    <Style TargetType="{x:Type gi:GIInputNumerosAcimaAbaixo}" BasedOn="{StaticResource GIInputNumerosAcimaAbaixoStyle}" />
+    <Style TargetType="{x:Type gi:GIInputNumerosDecimais}" BasedOn="{StaticResource GIInputNumerosDecimaisStyle}" />
+    <Style TargetType="{x:Type gi:GIInputNumerosInteiros}" BasedOn="{StaticResource GIInputNumerosInteirosStyle}" />
+    <Style TargetType="{x:Type gi:GIInputNumerosMoeda}" BasedOn="{StaticResource GIInputNumerosMoedaStyle}" />
+    <Style TargetType="{x:Type gi:GIInputNumerosPercentual}" BasedOn="{StaticResource GIInputNumerosPercentualStyle}" />
+    <Style TargetType="{x:Type gi:GIGrid}" BasedOn="{StaticResource GIGridStyle}" />
+    <Style TargetType="{x:Type gi:GICalendario}" BasedOn="{StaticResource GICalendarioStyle}" />
+    <Style TargetType="{x:Type gi:GICalendarioTime}" BasedOn="{StaticResource GICalendarioTimeStyle}" />
+    <!--<Style TargetType="{x:Type gi:GISearchTextBox}" BasedOn="{StaticResource GISearchTextBoxStyle}" />-->
+    <Style TargetType="{x:Type gi:GISearchText}" BasedOn="{StaticResource GISearchTextStyle}" />
+    <Style TargetType="{x:Type gi:GIComboTree}" BasedOn="{StaticResource GIComboTreeStyle}" />
+    <Style TargetType="{x:Type gi:GIClassificacao}" BasedOn="{StaticResource GIClassificacaoStyle}" />
+    <Style TargetType="{x:Type gi:GIBotaoAcao}" BasedOn="{StaticResource GIBotaoAcaoStyle}" />
+    <Style TargetType="{x:Type gi:GIToolbar}" BasedOn="{StaticResource GIToolbarStyle}" />
+    <Style TargetType="{x:Type gi:GIGridToolbarCadastro}" BasedOn="{StaticResource GIGridToolbarCadastroStyle}" />
+    <!--<Style TargetType="{x:Type gi:GISeparator}" BasedOn="{StaticResource GISeparatorStyle}" />-->
+    <Style TargetType="{x:Type gi:GIInputWrappedText}" BasedOn="{StaticResource GIInputWrappedTextStyle}" />
+    <Style TargetType="{x:Type gi:GIModuleItemsButton}" BasedOn="{StaticResource GIModuleItemsButtonStyle}" />
+    <Style TargetType="{x:Type gi:GIToolbarCadastro}" BasedOn="{StaticResource GIToolbarCadastroStyle}" />
+    <Style TargetType="{x:Type gi:GIBotaoDropDownExportar}" BasedOn="{StaticResource GIBotaoDropDownExportarStyle}" />
+    <Style TargetType="{x:Type gi:GIBotaoWizard}" BasedOn="{StaticResource GIBotaoWizardStyle}" />
+    <Style TargetType="{x:Type gi:GIBotaoDropDownOutros}" BasedOn="{StaticResource GIBotaoDropDownOutrosStyle}" />
+    <Style TargetType="{x:Type gi:GIBotaoDropDown}" BasedOn="{StaticResource GIBotaoDropDownStyle}" />
+    <Style TargetType="{x:Type gi:GIBotaoDropDownLocalizar}" BasedOn="{StaticResource GIBotaoDropDownLocalizarStyle}" />
+    <Style TargetType="{x:Type gi:GIComboTreeGeneric}" BasedOn="{StaticResource GIComboTreeGenericStyle}" />
+    <Style TargetType="{x:Type gi:GISpreadsheet}" BasedOn="{StaticResource GISpreadsheetStyle}" />
+    <Style TargetType="{x:Type gi:GIWindow}" BasedOn="{StaticResource GIWindowStyle}" />
+    <Style TargetType="{x:Type gi:GITreePayRec}" BasedOn="{StaticResource GITreePayRecStyle}" />
+</ResourceDictionary>
+
+    
+    
+    
+    
+
+    
+    
+    

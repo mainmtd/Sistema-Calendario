@@ -1,0 +1,360 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:gi="clr-namespace:NL.GI.ComponentesWPF.Cliente">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/System.Windows.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.Input.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.GridView.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+
+    <Style x:Key="GIBotaoDropDownOutrosStyle" TargetType="{x:Type gi:GIBotaoDropDownOutros}" >
+        <Setter Property="IsOpen" Value="False"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="FontFamily" Value="Verdana" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="CornerRadius" Value="1"/>
+        <Setter Property="Template">
+				<Setter.Value>
+                    <ControlTemplate TargetType="{x:Type gi:GIBotaoDropDownOutros}">
+                        <Grid SnapsToDevicePixels="True" x:Name="mainGrid">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+									</VisualState>
+									<VisualState x:Name="Pressed">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CommonStatesWrapper"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="disabledBorder">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Content"/>
+											<DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DropDownIndicator"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="BackgroundVisibility">
+									<VisualState x:Name="BackgroundIsHidden">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="OuterBorder"/>
+											<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="disabledBorder"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="BackgroundIsVisible"/>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="IsOpenState">
+									<VisualState x:Name="Closed"/>
+									<VisualState x:Name="Opened">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="CheckedVisual"/>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Fill" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<SolidColorBrush Color="Black"/>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="DropDownButtonPosition">
+									<VisualState x:Name="DropDownButtonAtLeft">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>0</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>1</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="DropDownButtonAtTop">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>1</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>0</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="DropDownButtonAtRight">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>2</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>1</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="DropDownButtonAtBottom">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>1</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Int32>2</System:Int32>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="PopupPlacementState">
+									<VisualState x:Name="PlacementBottom"/>
+									<VisualState x:Name="PlacementTop">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="RenderTransform" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<TransformGroup>
+															<RotateTransform Angle="180"/>
+														</TransformGroup>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="PlacementLeft">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="RenderTransform" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<TransformGroup>
+															<RotateTransform Angle="90"/>
+														</TransformGroup>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="PlacementRight">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="RenderTransform" Storyboard.TargetName="DropDownIndicator">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<TransformGroup>
+															<RotateTransform Angle="-90"/>
+														</TransformGroup>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStatesGroup">
+									<VisualState x:Name="Unfocused">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisual">
+												<DiscreteObjectKeyFrame KeyTime="0:0:0.15">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Collapsed</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual">
+												<LinearDoubleKeyFrame KeyTime="0:0:0.15" Value="0"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Focused">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisual">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisual">
+												<LinearDoubleKeyFrame KeyTime="0:0:0.115" Value="1"/>
+											</DoubleAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+                            
+							<Border x:Name="OuterBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}">
+								<Border x:Name="InnerBorder" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding InnerCornerRadius}"/>
+							</Border>
+                            
+							<Border x:Name="OuterMouseOverBorder" BorderBrush="Yellow" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" Visibility="Collapsed">
+                                <Border x:Name="InnerMouseOverBorder" BorderBrush="Blue" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding InnerCornerRadius}" />
+							</Border>
+                            
+							<Border x:Name="disabledBorder" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" Background="Transparent" CornerRadius="{TemplateBinding CornerRadius}" Visibility="Collapsed"/>
+                            
+							<Border x:Name="CheckedVisual" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0">
+                                <Border x:Name="InnerCheckedVisual" BorderBrush="Transparent" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding InnerCornerRadius}" />
+							</Border>
+                            
+							<Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="27"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                                
+                            <Border Margin="5 0 0 0" Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1">
+                                <Grid>
+                                    <Image Name="img" MaxHeight="23" MaxWidth="23" Source="{Binding Image, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="Content" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="1" ContentStringFormat="{TemplateBinding ContentStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Grid.Row="1" RecognizesAccessKey="True" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                
+                            <Path x:Name="DropDownIndicator" Grid.Column="1" Data="" Fill="Black" HorizontalAlignment="Center" IsHitTestVisible="False" Margin="5,3" Grid.Row="2" RenderTransformOrigin="0.5,0.5" SnapsToDevicePixels="True" Visibility="{TemplateBinding DropDownIndicatorVisibility}" VerticalAlignment="Center"/>
+                            <!--M0,0L5,0 5,1 4,1 4,2 3,2 3,3 2,3 2,2 1,2 1,1 0,1 0,0z-->
+                        </Grid>
+							<Popup x:Name="DropDownPopup" AllowsTransparency="True" Focusable="False" Placement="Bottom" StaysOpen="False">
+								<Grid>
+									<Border x:Name="DropDownPopupBorder" BorderBrush="Transparent" BorderThickness="1" Background="Transparent" CornerRadius="0" Height="{TemplateBinding DropDownHeight}" MaxWidth="{TemplateBinding DropDownMaxWidth}" MaxHeight="{TemplateBinding DropDownMaxHeight}" MinWidth="3" MinHeight="3" Width="{TemplateBinding DropDownWidth}">
+                                    <ContentControl x:Name="DropDownPopupContent" ContentTemplate="{TemplateBinding DropDownContentTemplate}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                                        <ContentControl.Content>
+                                            <StackPanel x:Name="option"  Width="Auto"  Orientation="Vertical" Height="Auto">
+                                                <StackPanel.Background>
+                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                        <GradientStop Color="#FFB9B9B9"/>
+                                                        <GradientStop Color="#FFB9B9B9" Offset="0.65"/>
+                                                        <GradientStop Color="#FFA5A5A5" Offset="1"/>
+                                                    </LinearGradientBrush>
+                                                </StackPanel.Background>
+
+                                                <gi:GIBotaoAcao Content="Mudar senha (Usuário)"
+                                                                Action="Customizado"
+                                                                Width="180" Height="38"
+                                                                Command="{Binding CommandMudarSenhaUsuario, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                                                x:Name="MudarSenhaUsuario"/>
+
+                                                <gi:GIBotaoAcao Content="Mudar senha (Email)"
+                                                                Action="Customizado"
+                                                                Width="180" Height="38"
+                                                                Command="{Binding CommandMudarSenhaEmail, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                                                x:Name="MudarSenhaEmail"/>
+
+                                                <gi:GIBotaoAcao Content="Acessos"
+                                                                Action="Customizado"
+                                                                Width="180" Height="38"
+                                                                Command="{Binding CommandAcesso, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"
+                                                                x:Name="Acessos"/>
+
+                                            </StackPanel>
+                                        </ContentControl.Content>
+                                    </ContentControl>
+
+                                </Border>
+								</Grid>
+							</Popup>
+							<Border x:Name="CommonStatesWrapper">
+								<Border x:Name="FocusVisual" BorderBrush="Transparent" BorderThickness="1" Background="Transparent" CornerRadius="{TemplateBinding CornerRadius}" Opacity="0" Visibility="Collapsed">
+									<Border x:Name="FocusInnerVisual" BorderBrush="Transparent" BorderThickness="1" CornerRadius="{TemplateBinding InnerCornerRadius}"/>
+								</Border>
+							</Border>
+						</Grid>
+
+                    <ControlTemplate.Triggers>
+                        
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFFFFFFF" Offset="0.31"/>
+                                        <GradientStop Color="#FFDADADA" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFFFFFFF" Offset="0.31"/>
+                                        <GradientStop Color="#FFDADADA" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF919191" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="#FFCC082B" />
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsMouseOver}" Value="True" >
+                            <Setter Property="Source" TargetName="img" Value="{Binding ImageOver, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsPressed}" Value="True" >
+                            <Setter Property="Source" TargetName="img" Value="{Binding ImagePressed, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                        
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+</ResourceDictionary>

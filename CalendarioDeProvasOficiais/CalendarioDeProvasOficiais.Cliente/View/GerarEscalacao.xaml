@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="CalendarioDeProvasOficiais.Cliente.View.GerarEscalacao"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" x:Name="GerarEscalacaoTela"
+             d:DesignHeight="500" d:DesignWidth="700">
+
+
+    <xctk:BusyIndicator  x:Name="ProvasOcupado" IsBusy="{Binding IndicadorProvasOcupado, Mode=TwoWay}" >
+        <xctk:BusyIndicator.BusyContentTemplate>
+            <DataTemplate>
+                <TextBlock Text="Localizando provas, aguarde..." FontWeight="Bold" HorizontalAlignment="Center"/>
+            </DataTemplate>
+        </xctk:BusyIndicator.BusyContentTemplate>
+
+        <xctk:BusyIndicator x:Name="EscalacaoOcupado" IsBusy="{Binding IndicadorEscalacaoOcupado, Mode=TwoWay}" >
+        <xctk:BusyIndicator.BusyContentTemplate>
+            <DataTemplate>
+                <TextBlock Text="Gerando escalação, aguarde..." FontWeight="Bold" HorizontalAlignment="Center"/>
+            </DataTemplate>
+        </xctk:BusyIndicator.BusyContentTemplate>
+
+            <xctk:BusyIndicator x:Name="ZerarOcupado" IsBusy="{Binding IndicadorZerarOcupado, Mode=TwoWay}" >
+                <xctk:BusyIndicator.BusyContentTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Zerando escalação, aguarde..." FontWeight="Bold" HorizontalAlignment="Center"/>
+                    </DataTemplate>
+                </xctk:BusyIndicator.BusyContentTemplate>
+
+                <Grid Margin="10 0 10 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Gerar Escalação" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="58,4" />
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Content="Calendário: "/>
+                <ComboBox Width="250" Margin="10 0 0 0" DisplayMemberPath="Nome" ItemsSource="{Binding ListCalendarioProva, Mode=TwoWay}" SelectedItem="{Binding CalendarioProvaSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Button Width="50" Content="Gerar" Margin="10 0 0 0" Command="{Binding GerarEscalacaoCmd}" />
+                <Button Width="50" Content="Zerar" Margin="10 0 0 0" Command="{Binding ZerarEscalacao}" />
+            </StackPanel>
+
+            
+            <Grid Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                <ListView Margin="10 5 0 5" ItemsSource="{Binding ListProvas, Mode=TwoWay}" SelectedItem="{Binding ProvaSelecionada, Mode=TwoWay}" >
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn DisplayMemberBinding="{Binding Data, Mode=TwoWay}" Header="Data"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Horario, Mode=TwoWay}" Header="Horário" />
+                            <GridViewColumn DisplayMemberBinding="{Binding Disciplina, Mode=TwoWay}" Header="Disciplina"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Turma, Mode=TwoWay}" Header="Turma"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Divisao, Mode=TwoWay}" Header="Divisão"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Sala, Mode=TwoWay}" Header="Sala"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Aplicador, Mode=TwoWay}" Header="Aplicador"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Responsavel, Mode=TwoWay}" Header="Responsável"/>                            
+                            <GridViewColumn DisplayMemberBinding="{Binding Suplentes, Mode=TwoWay}" Header="Professor Suplente"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                    <Button Grid.Column="1" Height="30" Width="70" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CmdAlterarEscalacao}" Content="Alterar"/>
+            </Grid>
+        </Grid>
+            </xctk:BusyIndicator>
+
+    </xctk:BusyIndicator>
+    </xctk:BusyIndicator>
+
+</UserControl>

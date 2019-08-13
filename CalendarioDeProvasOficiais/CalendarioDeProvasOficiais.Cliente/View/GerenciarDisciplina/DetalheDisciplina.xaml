@@ -1,0 +1,52 @@
+﻿<Window x:Class="CalendarioDeProvasOficiais.Cliente.View.GerenciarDisciplina.DetalheDisciplina"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Disciplina" Height="500" Width="400">
+    <StackPanel>
+        <Label Content="Disciplina" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <Grid Margin="15 10 15 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="250" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Regime:" />
+            <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ListRegime, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Value" SelectedItem="{Binding RegimeSelecionado, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Width="150" />
+
+            <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Nome:" />
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Nome, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Width="150" />
+
+            <Label Grid.Row="2" Grid.ColumnSpan="2" Content="Professores" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+            <Label Grid.Row="3" Grid.Column="0" Content="Professores cadastrados" FontSize="14" HorizontalAlignment="Center"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="Professores que lecionam" FontSize="14" HorizontalAlignment="Center"/>
+
+            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <ListBox Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DisplayMemberPath="Nome" ItemsSource="{Binding ListProfessoresGeral, Mode=TwoWay}" SelectedItem="{Binding ProfessoresGeralSelecionado}" />
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical">
+                    <Button Content="&gt;&gt;" Command="{Binding CmdAdd}" Margin="0 0 0 5" />
+                    <Button Content="&lt;&lt;" Command="{Binding CmdDel}" Margin="0 5 0 0" />
+                </StackPanel>
+                <ListBox Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" DisplayMemberPath="Nome" ItemsSource="{Binding ListProfessoresSelecionados, Mode=TwoWay}" SelectedItem="{Binding ProfessorSelecionado}" />
+                
+            </Grid>
+            
+        </Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+            <Button Content="Confirmar" Command="{Binding CmdConfirmar}" Margin="0 15 5 0" />
+            <Button Content="Cancelar" Command="{Binding CmdCancelar}" Margin="5 15 0 0" />
+        </StackPanel>
+    </StackPanel>
+</Window>

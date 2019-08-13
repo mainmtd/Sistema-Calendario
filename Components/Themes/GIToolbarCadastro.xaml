@@ -1,0 +1,60 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gi="clr-namespace:NL.GI.ComponentesWPF.Cliente">
+    
+    <ControlTemplate x:Key="CtrlTemplate">
+        <Grid>
+            <gi:GIToolbar Orientation="Horizontal" Margin="0 0 0 0">
+                <gi:GIBotaoAcao Action="Incluir" 
+                                    Visibility="{Binding VisibilityNovo, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Margin="10 0 0 0" 
+                                    Command="{Binding CommandNovo, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+
+                <gi:GIBotaoAcao Action="Editar" 
+                                    Visibility="{Binding VisibilityEditar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Margin="5 0 0 0" 
+                                    Command="{Binding CommandEditar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+
+                <gi:GIBotaoAcao Action="Excluir" 
+                                    Visibility="{Binding VisibilityExcluir, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Margin="5 0 0 0" 
+                                    Command="{Binding CommandExcluir, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+
+                <gi:GIBotaoAcao Action="Salvar" 
+                                    Visibility="{Binding VisibilitySalvar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Margin="5 0 0 0" 
+                                    Command="{Binding CommandSalvar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+
+                <gi:GIBotaoAcao Action="Atualizar" 
+                                    Visibility="{Binding VisibilityAtualizar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"  
+                                    Margin="5 0 0 0" 
+                                    Command="{Binding CommandAtualizar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />
+
+                <!--<gi:GIBotaoAcao Action="Exportar" 
+                                    Visibility="{Binding VisibilityExportar, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Margin="5 0 0 0" 
+                                    Command="{Binding CmdPrint, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" />-->
+
+                <gi:GIBotaoAcao Action="Customizado" 
+                                    Content="{Binding DescricaoCustomizado, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Image="{Binding ImageCustomizado, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    ImageOver="{Binding ImageOverCustomizado, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    ImagePressed="{Binding ImagePressedCustomizado, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"
+                                    Visibility="{Binding VisibilityCustomizado, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" 
+                                    Command="{Binding CommandCustomizado, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"  
+                                    Margin="5 0 0 0" />
+
+                <gi:GIBotaoAcao Action="Imprimir" 
+                                    Visibility="{Binding VisibilityImprimir, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}"                                      
+                                    Margin="5 0 0 0" 
+                                    Command="{Binding CommandImprimir, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay}" x:Name="ImprimirBtn" />
+            </gi:GIToolbar>
+        </Grid>
+    </ControlTemplate>
+    
+    <Style x:Key="GIToolbarCadastroStyle" TargetType="{x:Type gi:GIToolbarCadastro}">
+        <Setter Property="Template" Value="{StaticResource CtrlTemplate}" />
+    </Style>
+</ResourceDictionary>
+    

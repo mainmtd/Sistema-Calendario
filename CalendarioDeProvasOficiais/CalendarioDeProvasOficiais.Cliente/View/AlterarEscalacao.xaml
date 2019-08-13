@@ -1,0 +1,27 @@
+﻿<Window x:Class="CalendarioDeProvasOficiais.Cliente.View.AlterarEscalacao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Alterar escalação" Height="200" Width="300">
+    <StackPanel>
+        <Label Content="Escalação" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center"/>
+        <Grid Margin="15 10 15 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Content="Professor aplicador:" />
+            <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ListProfessoresAplicador, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Nome" SelectedItem="{Binding ProfessorAplicadorSelecionado, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Width="120" />
+
+            <Label Grid.Column="0" Grid.Row="1" ToolTip="Só preencher esse campo se o professor aplicador selecionado, não puder aplicar a prova." VerticalAlignment="Center" HorizontalAlignment="Right" Content="Professor Suplente:" />
+            <ComboBox Grid.Column="1" Grid.Row="1" ToolTip="Só preencher esse campo se o professor aplicador selecionado, não puder aplicar a prova." ItemsSource="{Binding ListProfessoresSup, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Nome" SelectedItem="{Binding ProfessorSuplenteSelecionado, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Width="120" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+            <Button Content="Confirmar" Command="{Binding CmdConfirmar}" Margin="0 5 5 0" />
+            <Button Content="Cancelar" Command="{Binding CmdCancelar}" Margin="5 5 0 0" />
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63386807-5389-4BB9-AD7C-23259910CE42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NL.GI.ComponentesWPF.Cliente</RootNamespace>
+    <AssemblyName>NL.GI.ComponentesWPF.Cliente</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Windows\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GI_LibBD, Version=12.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Comum\GI_LibBD.dll</HintPath>
+    </Reference>
+    <Reference Include="GI_Uteis, Version=12.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\Comum\GI_Uteis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Microsoft\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Microsoft\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Microsoft\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Spreadsheet, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2013.2.724.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Lib\WPF\Telerik\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationClientsideProviders" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Button\GIAcaoBotao.cs" />
+    <Compile Include="Classes\Button\GIBotaoAcao.cs" />
+    <Compile Include="Classes\Button\GIBotaoComum.cs" />
+    <Compile Include="Classes\Button\GIBotaoDropDown.cs" />
+    <Compile Include="Classes\Button\GIBotaoDropDownExportar.cs" />
+    <Compile Include="Classes\Button\GIBotaoDropDownLocalizar.cs" />
+    <Compile Include="Classes\Button\GIBotaoDropDownOutros.cs" />
+    <Compile Include="Classes\Button\GIBotaoWizard.cs" />
+    <Compile Include="Classes\Button\GIModuleItemsButton.cs" />
+    <Compile Include="Classes\Button\GIRadioButton.cs" />
+    <Compile Include="Classes\Calendario\GICalendario.cs" />
+    <Compile Include="Classes\Calendario\GICalendarioTime.cs" />
+    <Compile Include="Classes\Classificacao\GIClassificacao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Classificacao\UltimoNivel.cs" />
+    <Compile Include="Classes\ComboBox\GIComboBox.cs" />
+    <Compile Include="Classes\ComboTree\CM_CTABM.cs" />
+    <Compile Include="Classes\ComboTree\ComboTreeGeneric\GIComboTreeGeneric.cs" />
+    <Compile Include="Classes\ComboTree\ExtendedTreeView.cs" />
+    <Compile Include="Classes\ComboTree\GIComboTreeUtils.cs" />
+    <Compile Include="Classes\ComboTree\ITreeViewItemModel.cs" />
+    <Compile Include="Classes\ComboTree\MatProdServ\TipoTree.cs" />
+    <Compile Include="Classes\ComboTree\PayRec\GITreePayRec.cs" />
+    <Compile Include="Classes\ComboTree\PayRec\PayRecTree.cs" />
+    <Compile Include="Classes\ComboTree\SomeHierarchyViewModel.cs" />
+    <Compile Include="Classes\ComboTree\MatProdServ\GIComboTree.cs" />
+    <Compile Include="Classes\Filtro\GIFiltroPadrao.cs" />
+    <Compile Include="Classes\GIComponentsController.cs" />
+    <Compile Include="Classes\Grid\Factory.cs" />
+    <Compile Include="Classes\Planilha\GISpreadsheet.cs" />
+    <Compile Include="Classes\Grid\ExportEvent.cs" />
+    <Compile Include="Classes\Grid\GIGrid.cs" />
+    <Compile Include="Classes\Grid\GIGridAttributes.cs" />
+    <Compile Include="Classes\Grid\PrintExtensions.cs" />
+    <Compile Include="Classes\Grid\UCExportarTela.xaml.cs">
+      <DependentUpon>UCExportarTela.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Grid\UCExportarTelaVM.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Grid\UCGIBalloonHint.xaml.cs">
+      <DependentUpon>UCGIBalloonHint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Inputs\GIInputCheckbox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Inputs\GIInputNumerosAcimaAbaixo.cs" />
+    <Compile Include="Classes\Inputs\GIInputNumerosDecimais.cs" />
+    <Compile Include="Classes\Inputs\GIInputNumerosInteiros.cs" />
+    <Compile Include="Classes\Inputs\GIInputNumerosMoeda.cs" />
+    <Compile Include="Classes\Inputs\GIInputNumerosPercentual.cs" />
+    <Compile Include="Classes\Inputs\GIInputText.cs" />
+    <Compile Include="Classes\Inputs\GIInputWrappedText.cs" />
+    <Compile Include="Classes\Label\GILabelConteudo.cs" />
+    <Compile Include="Classes\Label\GILabelSubtitulo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Label\GILabelTexto.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Label\GILabelTitulo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\ListBox\GIListBox.cs" />
+    <Compile Include="Classes\Grid\GIGridToolbarCadastro.cs" />
+    <Compile Include="Classes\SearchText\Favorecido\ItemSelecionadoFav.cs" />
+    <Compile Include="Classes\SearchText\Favorecido\Material.cs" />
+    <Compile Include="Classes\SearchText\Favorecido\SearchFavored.xaml.cs">
+      <DependentUpon>SearchFavored.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\SearchText\Favorecido\Favored.cs" />
+    <Compile Include="Classes\SearchText\Favorecido\SearchFavoredVM.cs" />
+    <Compile Include="Classes\SearchText\GISearchText.cs" />
+    <Compile Include="Classes\Toolbar\GISeparator.cs" />
+    <Compile Include="Classes\Toolbar\GIToolbar.cs" />
+    <Compile Include="Classes\Toolbar\GIToolbarCadastro.cs" />
+    <Compile Include="Classes\UniformGridWithOrientation\UniformGridWithOrientation.cs" />
+    <Compile Include="Classes\Window\GIWindow.cs" />
+    <Compile Include="Interfaces\IGIGridToolbarFindable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resources.en-US.Designer.cs">
+      <DependentUpon>Resources.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Classes\Grid\UCExportarTela.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Classes\Grid\UCGIBalloonHint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Classes\SearchText\Favorecido\SearchFavored.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GICalendarioTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GISearchText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GITreePayRec.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoAcao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoComum.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoDropDown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoDropDownExportar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoDropDownLocalizar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoDropDownOutros.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIBotaoWizard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GICalendario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIClassificacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GIColorsBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIComboTree.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIComboTreeGeneric.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIFiltroPadrao.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIGridToolbarCadastro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputBase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputCheckbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GIInputNumerosAcimaAbaixo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputNumerosDecimais.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputNumerosInteiros.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputNumerosMoeda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputNumerosPercentual.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIInputWrappedText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GILabelConteudo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GILabelSubtitulo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GILabelTexto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GILabelTitulo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIModuleItemsButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIRadioButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GISeparator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GISpreadsheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIToolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GIToolbarCadastro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\System.Windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Telerik.Windows.Controls.Data.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Telerik.Windows.Controls.GridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Telerik.Windows.Controls.Input.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Telerik.Windows.Controls.Navigation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Telerik.Windows.Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\clear.png" />
+    <Resource Include="images\pontos.png" />
+    <Resource Include="images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\buscar.png" />
+    <Resource Include="images\botaoacao\editar.png" />
+    <Resource Include="images\botaoacao\excluir.png" />
+    <Resource Include="images\botaoacao\filtrar.png" />
+    <Resource Include="images\botaoacao\incluir.png" />
+    <Resource Include="images\botaoacao\salvar.png" />
+    <Resource Include="images\botaoacao\white\buscar.png" />
+    <Resource Include="images\botaoacao\white\editar.png" />
+    <Resource Include="images\botaoacao\white\excluir.png" />
+    <Resource Include="images\botaoacao\white\filtrar.png" />
+    <Resource Include="images\botaoacao\white\incluir.png" />
+    <Resource Include="images\botaoacao\white\salvar.png" />
+    <Resource Include="images\checkblack.png" />
+    <Resource Include="images\checkgray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\indisponivel.png" />
+    <Resource Include="images\botaoacao\white\indisponivel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\over\buscar.png" />
+    <Resource Include="images\botaoacao\over\editar.png" />
+    <Resource Include="images\botaoacao\over\excluir.png" />
+    <Resource Include="images\botaoacao\over\filtrar.png" />
+    <Resource Include="images\botaoacao\over\incluir.png" />
+    <Resource Include="images\botaoacao\over\indisponivel.png" />
+    <Resource Include="images\botaoacao\over\salvar.png" />
+    <Resource Include="images\botaoacao\pressed\buscar.png" />
+    <Resource Include="images\botaoacao\pressed\editar.png" />
+    <Resource Include="images\botaoacao\pressed\excluir.png" />
+    <Resource Include="images\botaoacao\pressed\filtrar.png" />
+    <Resource Include="images\botaoacao\pressed\incluir.png" />
+    <Resource Include="images\botaoacao\pressed\indisponivel.png" />
+    <Resource Include="images\botaoacao\pressed\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Resources.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\pressed\exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\32x32\Gray\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\white\exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\over\exportar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\over\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\white\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\botaoacao\pressed\atualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrow.png" />
+    <Resource Include="images\arrowGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\cadeado.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

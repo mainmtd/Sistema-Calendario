@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="NL.GI.ComponentesWPF.Cliente.Classes.Grid.UCExportarTela"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gi="clr-namespace:NL.GI.ComponentesWPF.Cliente" 
+             xmlns:p="clr-namespace:NL.GI.ComponentesWPF.Cliente.Resources"
+             mc:Ignorable="d" 
+             Height="100" Width="250">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <gi:GILabelConteudo Content="{x:Static p:Resources.ExportarMensagem}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <gi:GIRadioButton GroupName="Exportar" Content="Excel" IsChecked="{Binding isExcelChecked, Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <gi:GIRadioButton GroupName="Exportar" Content="PDF" IsChecked="{Binding isPDFChecked, Mode=TwoWay}" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" />
+        <gi:GIBotaoComum Content="Ok" Grid.Row="3" Command="{Binding CmdOk}" Width="90" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        
+    </Grid>
+</UserControl>

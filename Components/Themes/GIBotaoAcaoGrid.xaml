@@ -1,0 +1,110 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gi="clr-namespace:GI_ComponentesWPF">
+
+    <Style TargetType="TextBlock"></Style>
+
+
+    <Style TargetType="{x:Type gi:GIBotaoAcaoGrid}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type gi:GIBotaoAcaoGrid}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="Titulo" Storyboard.TargetProperty="Foreground" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FF3C3C3C" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="FundoImagem" Storyboard.TargetProperty="Fill" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FF949494" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="Titulo" Storyboard.TargetProperty="Foreground" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FF3C3C3C" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="FundoImagem" Storyboard.TargetProperty="Fill" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FF737373" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="Titulo" Storyboard.TargetProperty="Foreground" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FF3C3C3C" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="FundoImagem" Storyboard.TargetProperty="Fill" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="#FFEB0931" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0:0:0" Storyboard.TargetName="Content" Storyboard.TargetProperty="Opacity" >
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="0.5" />
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border x:Name="Border" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+                                CornerRadius="{TemplateBinding CornerRadius}" 
+                                Background="{TemplateBinding Background}" />
+
+                        <Grid x:Name="Content"
+								Margin="5,5,5,5"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}">
+                            <StackPanel Orientation="Horizontal" Margin="0">
+                                <Grid>
+                                    <Path x:Name="FundoImagem" Grid.Column="0" Data="F1M7291.2998,7291.5811C7241.3118,7341.5691,7160.2648,7341.5661,7110.2798,7291.5811C7060.2918,7241.5941,7060.2918,7160.5491,7110.2798,7110.5621C7160.2648,7060.5751,7241.3118,7060.5741,7291.2988,7110.5611C7341.2848,7160.5481,7341.2848,7241.5961,7291.2998,7291.5811" 
+                                          Fill="#FF919191" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center" UseLayoutRounding="False" StrokeThickness="0" Width="20" Height="20" RenderTransformOrigin="0.5,0.5"/>
+                                    <Image x:Name="Imagem" MaxWidth="12" MaxHeight="12" Stretch="Fill" Source="{TemplateBinding Imagem}" ></Image>
+                                </Grid>
+                                <TextBlock x:Name="Titulo" Text="{TemplateBinding Descricao}" Margin="5,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                            </StackPanel>
+                            <Grid.RenderTransform>
+                                <TranslateTransform />
+                            </Grid.RenderTransform>
+                        </Grid>
+
+                        <!-- Focus -->
+                        <Border x:Name="CommonStatesWrapper">
+                            <Border x:Name="FocusVisual" Visibility="Collapsed" Opacity="0" 
+                                    CornerRadius="{TemplateBinding CornerRadius}" 
+                                    BorderThickness="1" BorderBrush="White"  />
+                        </Border>
+
+                        <Rectangle HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="2" Opacity="0.4">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#B2000000" Offset="1"/>
+                                    <GradientStop Offset="0.1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

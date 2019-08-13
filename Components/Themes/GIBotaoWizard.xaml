@@ -1,0 +1,197 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:gi="clr-namespace:NL.GI.ComponentesWPF.Cliente"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/System.Windows.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.Input.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/Telerik.Windows.Controls.GridView.xaml" />
+        <ResourceDictionary Source="/NL.GI.ComponentesWPF.Cliente;component/Themes/GIBase.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <sys:String x:Key="GI_FontFamily_Normal">Verdana</sys:String>
+    <sys:Double x:Key="GI_FontSize_Normal">11</sys:Double>    
+    
+
+    <LinearGradientBrush  x:Key="GI_ControlBackground_MouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF919191" Offset="1"/>
+        <GradientStop Color="#FF6A6A6A" Offset="0.5"/>
+        <GradientStop Color="#FF919191"/>
+    </LinearGradientBrush>
+    <!--<SolidColorBrush x:Key="GI_ControlBackground_MouseOver" Color="#FF919191"/>-->
+    <SolidColorBrush x:Key="GI_ControlOuterBorder_MouseOver" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_ControlInnerBorder_MouseOver" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_Foreground_MouseOver" Color="#FFFFFFFF"/>
+
+    <LinearGradientBrush  x:Key="GI_ControlBackground_Normal" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFDADADA" Offset="1"/>
+        <GradientStop Color="#FFE6E6E6" Offset="0.5"/>
+        <GradientStop Color="#FFDADADA" Offset="0"/>
+    </LinearGradientBrush>
+    <!--<SolidColorBrush x:Key="GI_ControlBackground_Normal" Color="#FFB9B9B9" />-->
+    <SolidColorBrush x:Key="GI_ControlForeground_Normal" Color="#FF3C3C3C"/>
+    <SolidColorBrush x:Key="GI_ControlOuterBorder_Normal" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_ControlInnerBorder_Normal" Color="#FFb9b9b9"/>
+
+    <LinearGradientBrush  x:Key="GI_ControlBackground_Pressed" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE80A31" Offset="1"/>
+        <GradientStop Color="#FF970620" Offset="0.5"/>
+        <GradientStop Color="#FFE80A31"/>
+    </LinearGradientBrush>
+    <!--<SolidColorBrush x:Key="GI_ControlBackground_Pressed" Color="#FFCC082B"/>-->
+    <SolidColorBrush x:Key="GI_ControlOuterBorder_Pressed" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_ControlInnerBorder_Pressed" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_Foreground_Pressed" Color="#FFFFFFFF"/>
+
+    <SolidColorBrush x:Key="GI_ControlOuterBorder_Disabled" Color="#FFB9B9B9"/>
+    <SolidColorBrush x:Key="GI_ControlBackground_Disabled" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_ControlInnerBorder_Disabled" Color="#FFb9b9b9"/>
+    <SolidColorBrush x:Key="GI_Foreground_Disabled" Color="#FFEAEAEA"/>
+
+    <SolidColorBrush x:Key="GI_Foreground_Focused" Color="#FFE80A31"/>
+    <SolidColorBrush x:Key="GI_ControlOuterBorder_Focused" Color="#FFE80A31"/>
+
+
+    <Style x:Key="GIBotaoWizardStyle" TargetType="{x:Type gi:GIBotaoWizard}">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="{StaticResource GI_ControlBackground_Normal}"/>
+        <Setter Property="Foreground" Value="{StaticResource GI_ControlForeground_Normal}"/>
+        <Setter Property="FontFamily" Value="{StaticResource GI_FontFamily_Normal}" />
+        <Setter Property="FontSize" Value="{StaticResource GI_FontSize_Normal}" />
+        <Setter Property="BorderBrush" Value="{StaticResource GI_ControlOuterBorder_Normal}"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Width" Value="65"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type gi:GIBotaoWizard}">
+                    <Grid x:Name="mainGrid">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">                                
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />                                
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Border x:Name="PART_Background"  BorderBrush="#FFb9b9b9" BorderThickness="0.5" Background="{TemplateBinding Background}" CornerRadius="10,0,0,10">
+                            <Border.Effect>
+                                <DropShadowEffect x:Name="SombraBotao" ShadowDepth="0" Direction="270" BlurRadius="0"/>
+                            </Border.Effect>
+                        </Border>
+
+                        <Path x:Name="PART_Path_Avancar" Data="M5,3 L20.3125,11 L4.75,18 z" 
+								Fill="{TemplateBinding Foreground}" 
+								HorizontalAlignment="Center" 
+								Height="10" Margin="0,25,0,0" Stretch="Fill" 
+								UseLayoutRounding="False" VerticalAlignment="Top" 
+								Width="10" StrokeThickness="0"/>
+
+                        <Path x:Name="PART_Path_Voltar" Data="M5,3 L20.3125,11 L4.75,18 z" Fill="{TemplateBinding Foreground}" 
+								HorizontalAlignment="Center" Height="10" 
+								Margin="0,25,0,0" Stretch="Fill" UseLayoutRounding="False" 
+								VerticalAlignment="Top" Width="10" StrokeThickness="0" 
+								RenderTransformOrigin="0.5,0.5"
+                              Visibility="Collapsed">
+                            <Path.RenderTransform>
+                                <ScaleTransform ScaleX="-1"/>
+                            </Path.RenderTransform>
+                        </Path>
+
+                        <TextBlock Grid.Column="1" x:Name="PART_TextBlock"                                    
+                                   TextWrapping="Wrap" 
+                                   Text="{TemplateBinding Content}" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontFamily="Verdana"
+                                   FontSize="12"
+                                   Margin="0, 22, 0, 0" 
+                                   Foreground="{TemplateBinding Foreground}" >
+                            <TextBlock.Effect>
+                                <DropShadowEffect x:Name="SombraTexto" ShadowDepth="0" Direction="270" BlurRadius="0" Color="White"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+
+                    </Grid>
+                    
+                    <ControlTemplate.Triggers>
+
+                        <!-- ************************************************** Triggers do focused ************************************************* -->
+
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="PART_Background" Value="{StaticResource GI_ControlOuterBorder_Focused}" />
+                            <Setter Property="Foreground" TargetName="PART_TextBlock" Value="{StaticResource GI_Foreground_Focused}" />
+                            <Setter Property="Fill" TargetName="PART_Path_Avancar" Value="{StaticResource GI_Foreground_Focused}" />
+                            <Setter Property="Fill" TargetName="PART_Path_Voltar" Value="{StaticResource GI_Foreground_Focused}" />
+                        </Trigger>
+
+
+                        <!-- ************************************************** Triggers do mouse over **************************************************** -->
+                        
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" TargetName="PART_Background" Value="{StaticResource GI_ControlOuterBorder_MouseOver}" />
+                            <Setter Property="Background" TargetName="PART_Background" Value="{StaticResource GI_ControlBackground_MouseOver}" />
+                            <Setter Property="Foreground" TargetName="PART_TextBlock" Value="{StaticResource GI_Foreground_MouseOver}" />                            
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsMouseOver}" Value="True" >
+                            <Setter Property="Fill" TargetName="PART_Path_Avancar" Value="{StaticResource GI_Foreground_MouseOver}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsMouseOver}" Value="True" >
+                            <Setter Property="Fill" TargetName="PART_Path_Voltar" Value="{StaticResource GI_Foreground_MouseOver}" />
+                        </DataTrigger>
+                        
+
+                        
+                        <!-- ************************************************** Triggers do mouse pressed ************************************************* -->
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="BorderBrush" TargetName="PART_Background" Value="{StaticResource GI_ControlOuterBorder_Pressed}" />
+                            <Setter Property="Background" TargetName="PART_Background" Value="{StaticResource GI_ControlBackground_Pressed}" />
+                            <Setter Property="Foreground" TargetName="PART_TextBlock" Value="{StaticResource GI_Foreground_Pressed}" />
+                            <Setter Property="Fill" TargetName="PART_Path_Avancar" Value="{StaticResource GI_Foreground_Pressed}" />
+                            <Setter Property="Fill" TargetName="PART_Path_Voltar" Value="{StaticResource GI_Foreground_Pressed}" />
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsPressed}" Value="True" >
+                            <Setter Property="Fill" TargetName="PART_Path_Avancar" Value="{StaticResource GI_Foreground_Pressed}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsPressed}" Value="True" >
+                            <Setter Property="Fill" TargetName="PART_Path_Voltar" Value="{StaticResource GI_Foreground_Pressed}" />
+                        </DataTrigger>
+                        
+                        
+
+                        <!-- ************************************************** Triggers do disabled ************************************************* -->
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="BorderBrush" TargetName="PART_Background" Value="{StaticResource GI_ControlOuterBorder_Disabled}" />
+                            <Setter Property="Background" TargetName="PART_Background" Value="{StaticResource GI_ControlBackground_Disabled}" />
+                            <Setter Property="Foreground" TargetName="PART_TextBlock" Value="{StaticResource GI_Foreground_Disabled}" />
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsEnabled}" Value="False" >
+                            <Setter Property="Fill" TargetName="PART_Path_Avancar" Value="{StaticResource GI_Foreground_Disabled}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=mainGrid, Path=IsEnabled}" Value="False" >
+                            <Setter Property="Fill" TargetName="PART_Path_Voltar" Value="{StaticResource GI_Foreground_Disabled}" />
+                        </DataTrigger>                        
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>
